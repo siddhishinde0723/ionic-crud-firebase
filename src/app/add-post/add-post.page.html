@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Add Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floting">Title</ion-label>
+    <ion-input type="text" [(ngModel)]="post.title" required></ion-input>
+  </ion-item>]
+
+  <ion-item>
+    <ion-label position="floting">Details</ion-label>
+    <ion-input type="text"[(ngModel)]="post.details" required></ion-input>
+  </ion-item>
+
+<ion-button class="ion-padding" color="primary"  (click)="createPost(post)">
+Create
+</ion-button>
+
+
+
+</ion-content>
