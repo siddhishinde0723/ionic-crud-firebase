@@ -17,7 +17,7 @@
     <ion-input type="password"[(ngModel)]="user.password" required></ion-input>
   </ion-item>
 </div>
-<div><ion-button class="ion-padding" color="primary" style="margin-left:100px"  (click)='login(user)'>
+<div><ion-button class="ion-padding" color="primary" style="margin-left:50px"  (click)='login(user)'>
   Login
 </ion-button>
 <ion-button class="ion-padding" color="primary" style="margin-right: 5px"  [routerLink]="['/register']">
@@ -25,10 +25,10 @@
 
 
 
- <div><ion-button class="ion-padding" color="primary" style="margin-left:50px" (click)='facelogin()'>
+ <div><ion-button class="ion-padding" color="primary"  (click)='facelogin()'>
    Facebook Login
-  </ion-button>
-  <ion-button class="ion-padding" color="primary"style="margin-right: 5px" (click)='loginGoogle()'>
+  </ion-button></div>
+ <div> <ion-button class="ion-padding" color="primary"  (click)='loginGoogle()'>
     Google Login
     </ion-button></div><br><br>
 

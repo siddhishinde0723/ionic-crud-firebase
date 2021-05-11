@@ -24,24 +24,28 @@ export class LoginPage implements OnInit {
 
     ngOnInit() {
     }
-   facelogin(){
-    this.fb.login(['email'])
-    .then((response: FacebookLoginResponse) => {
+    facelogin() {
+      this.fb.login(['email'])
+      .then((response: FacebookLoginResponse) => {
       this.onLoginSuccess(response);
       console.log(response.authResponse.accessToken);
-    }).catch((error) => {
+      }).catch((error) => {
       console.log(error);
       alert('error:' + error);
-    });
-   }
-   onLoginSuccess(res: FacebookLoginResponse) {
-    // const { token, secret } = res;
-    const credential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
-    this.afAuth.signInWithCredential(credential)
-      .then((response) => {
-        this.navCtrl.navigateRoot('home');
       });
-    }
+      }
+
+      onLoginSuccess(res: FacebookLoginResponse) {
+      // const { token, secret } = res;
+      const credential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+      this.afAuth.signInWithCredential(credential)
+      .then((response) => {
+      this.navCtrl.navigateRoot(['/home']);
+      this.loadingCtrl.dismiss();
+      });
+
+      }
+
    loginGoogle(){
     this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(res => {

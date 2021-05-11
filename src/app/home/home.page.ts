@@ -60,9 +60,13 @@ export class HomePage {
     .then(toastData => toastData.present());
   }
   logout(){
-  // this.afAuth.signOut();
-   this.navCtrl.navigateRoot('home');
+  this.afAuth.signOut().then(() => {
+    // Sign-out successful.
+    this.navCtrl.navigateRoot('login');
+  })
+  .catch(error => {
+    this.showToast(error.message);
+  });
 
-  }
-
+}
 }
